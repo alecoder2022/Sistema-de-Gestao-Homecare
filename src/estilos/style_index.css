@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Uber';
-    src: url('/src/fontes/UberMoveMedium.otf') format('opentype');
+    src: url('../src/fontes/UberMoveMedium.otf') format('opentype');
 }
 
 * {
