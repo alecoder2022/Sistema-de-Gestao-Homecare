@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Uber';
-    src: url('../src/fontes/UberMoveMedium.otf') format('opentype');
+    src: url('/src/fontes/UberMoveMedium.otf') format('opentype');
 }
 
 * {
@@ -10,6 +10,7 @@
 }
 
 body {
+    font-family: 'Uber';
     animation: rotate-bg-color 10s infinite;
 }
 
