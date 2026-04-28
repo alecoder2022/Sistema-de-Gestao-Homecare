@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos</title>
+    <link rel="stylesheet" href="../estilos/style_cadastros.css">
+    <style>
+        body {
+            font-family: 'Uber', Arial, sans-serif;
+            /* background-image: linear-gradient(230deg, #FDA69B, #FAFAFC); */
+            background-color: #f8bcb4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            height: 100dvh;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body class="fade-in-pagina">
+
+    <div class="header">
+        <a href="home_gestor.html"><img src="../imagem/voltar.png" class="seta-voltar" alt="seta" title="Voltar"></a>
+        <p>Setor: <span class="tipo-acesso">Administrativo</span></p>
+    </div>
+
+    <div class="fundo">
+
+        <div class="container">
+            <img src='../imagem/logo/1.png' alt="logo">
+            
+            <h1 class="titulo">Cadastro de Produto</h1>
+
+            <form onsubmit="event.preventDefault(); cadastrar();">
+                <label>Nome do Produto</label>
+                <input type="text" id="produto" name="produto" required>
+
+                <label>Tipo Produto</label>                
+                <select name="" id="prod-tipo" name="prod-tipo">
+                    <option value="default">-- Selecione --</option>
+                    <option value="equipamento">Equipamento</option>
+                    <option value="equipamento">Descartável</option>
+                    <option value="equipamento">Insumo</option>
+                </select>
+
+                <label>Fornecedor</label>
+                <input type="text" id="fornecedor" name="fornecedor" required>
+
+                <input type="submit" value=" CADASTRAR PRODUTO ">
+                
+            </form>
+            
+        </div>
+    
+    </div>
+
+    <dialog id="msg">
+        <!-- <p>Acesso ao Painel de Controle liberado</p> -->
+        <h3>Produto cadastrado com sucesso!</h3>
+        <input type="submit" id="ok" value="Ok" onsubmit="event.preventDefault(); proximaTela();"></input>
+    </dialog>
+
+    <script>
+
+        function cadastrar() {
+
+            const modal = document.getElementById('msg');
+            const btnFechar = document.getElementById('ok');
+
+            modal.showModal();
+            btnFechar.onclick = () => proximaTela();
+
+        }
+
+        function proximaTela() {
+            //window.location.reload();
+            setTimeout(function () {
+                window.location.href = 'home_gestor.html';
+            }, 100);
+        }
+
+    </script>
+    
+</body>
+</html>

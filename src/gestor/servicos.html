@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Serviços</title>
+    <link rel="stylesheet" href="../estilos/style_cadastros.css">
+    <style>
+        body {
+            font-family: 'Uber', Arial, sans-serif;
+            /* background-image: linear-gradient(230deg, #FDA69B, #FAFAFC); */
+            background-color: #f8bcb4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            height: 100dvh;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+
+<body class="fade-in-pagina">
+
+    <div class="header">
+        <a href="home_gestor.html"><img src="../imagem/voltar.png" class="seta-voltar" alt="seta" title="Voltar"></a>
+        <p>Setor: <span class="tipo-acesso">Administrativo</span></p>
+    </div>
+
+    <div class="fundo">
+        <div class="margemsegura"></div>
+        <div class="container">
+            <img src='../imagem/logo/1.png' alt="logo">
+            
+            <h1 class="titulo">Cadastro de Serviço</h1>
+
+            <form onsubmit="event.preventDefault(); cadastrar();">
+                <label>Nome do Serviço</label>
+                <input type="text" id="servico" required>
+
+                <label>Descrição do Serviço</label>
+                <textarea type="text" id="descricao" cols="10" rows="5" required></textarea>
+                
+                <label>Preço Base</label>
+                <input type="text" id="precoBase" oninput="mascaraMoeda(this);" step="0.01" placeholder="0,00" required>
+
+                <input type="submit" value=" CADASTRAR SERVIÇO ">
+                
+            </form>
+            
+        </div>
+    
+    </div>
+
+    <dialog id="msg">
+        <!-- <p>Acesso ao Painel de Controle liberado</p> -->
+        <h3>Serviço cadastrado com sucesso!</h3>
+        <input type="submit" id="ok" value="Ok" onsubmit="event.preventDefault(); proximaTela();"></input>
+    </dialog>
+
+    <script>
+
+        function cadastrar() {
+
+            const modal = document.getElementById('msg');
+            const btnFechar = document.getElementById('ok');
+
+            modal.showModal();
+            btnFechar.onclick = () => proximaTela();
+
+        }
+
+        function proximaTela() {
+            //window.location.reload();
+            setTimeout(function () {
+                window.location.href = 'home_gestor.html';
+            }, 100);
+        }
+
+    </script>
+    
+</body>
+</html>
