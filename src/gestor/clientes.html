@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Clientes</title>
+    <link rel="stylesheet" href="../estilos/style_cadastros.css">
+    
+</head>
+
+<body class="fade-in-pagina">
+
+    <div class="header">
+        <a href="home_gestor.html"><img src="../imagem/voltar.png" class="seta-voltar" alt="seta" title="Voltar"></a>
+        <p>Setor: <span class="tipo-acesso">Administrativo</span></p>
+    </div>
+
+    <div class="fundo">
+
+        <div class="container">
+            <img src='../imagem/logo/1.png' alt="logo">
+            
+            <h1 class="titulo">Cadastro de Cliente</h1>
+
+            <form onsubmit="event.preventDefault(); cadastrar();">
+                <label>Nome Completo</label>
+                <input type="text" id="cliente" required>
+
+                <label>Telefone</label>
+                <input type="text" id="telcliente" placeholder="(11) 9999-9999" required>
+
+                <label>Data de Nascimento</label>
+                <input type="date" id="dtnascicliente" required>
+
+                <label>CPF <span style="font-size: 1rem;">(somente números)</span></label>
+                <input type="text" id="cpf" maxlength="14" required>
+
+                <label>Responsável</label>
+                <input type="text" id="responsavel" required>
+
+                <input type="submit" value=" CADASTRAR CLIENTE ">
+                
+            </form>
+            
+        </div>
+    
+    </div>
+
+    <dialog id="msg">
+        <!-- <p>Acesso ao Painel de Controle liberado</p> -->
+        <h3>Cliente cadastrado com sucesso!</h3>
+        <input type="submit" id="ok" value="Ok" onsubmit="event.preventDefault(); proximaTela();"></input>
+    </dialog>
+
+    <script>
+
+        function cadastrar() {
+
+            const modal = document.getElementById('msg');
+            const btnFechar = document.getElementById('ok');
+
+            modal.showModal();
+            btnFechar.onclick = () => proximaTela();
+
+        }
+
+        function proximaTela() {
+            //window.location.reload();
+            setTimeout(function () {
+                window.location.href = 'home_gestor.html';
+            }, 100);
+        }
+
+        // Aplicaca máscara para o campo 'CPF'
+        document.getElementById('cpf').addEventListener('input', function(e) {
+            let valor = e.target.value;
+
+            // Remove tudo que não é número
+            valor = valor.replace(/\D/g, '');
+
+            // Aplica a máscara de CPF
+            valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
+            valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
+            valor = valor.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+            e.target.value = valor;
+        });
+
+    </script>
+
+   
+    
+</body>
+</html>

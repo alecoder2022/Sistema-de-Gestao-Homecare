@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Fornecedor</title>
+    <link rel="stylesheet" href="../estilos/style_cadastros.css">
+    
+</head>
+
+<body class="fade-in-pagina">
+
+    <div class="header">
+        <a href="home_gestor.html"><img src="../imagem/voltar.png" class="seta-voltar" alt="seta" title="Voltar"></a>
+        <p>Setor: <span class="tipo-acesso">Administrativo</span></p>
+    </div>
+
+    <div class="fundo">
+
+        <div class="container">
+            <img src='../imagem/logo/1.png' alt="logo">
+            
+            <h1 class="titulo">Cadastro de Fornecedor</h1>
+
+            <form onsubmit="event.preventDefault(); cadastrar();">
+                <label>Nome do Fornecedor</label>
+                <input type="text" id="fornecedor" required>
+
+                <label>Razão Social</label>
+                <input type="text" id="razaosocial" required>
+
+                <label>CNPJ</label>
+                <input type="text" id="cnpj" required>
+
+                <input type="submit" value=" CADASTRAR FORNECEDOR ">
+                
+            </form>
+            
+        </div>
+    
+    </div>
+
+    <dialog id="msg">
+        <!-- <p>Acesso ao Painel de Controle liberado</p> -->
+        <h3>Fornecedor cadastrado</h3>
+        <input type="submit" id="ok" value="Ok" onsubmit="event.preventDefault(); proximaTela();"></input>
+    </dialog>
+
+    <script>
+
+        function cadastrar() {
+
+            const modal = document.getElementById('msg');
+            const btnFechar = document.getElementById('ok');
+
+            modal.showModal();
+            btnFechar.onclick = () => proximaTela();
+
+        }
+
+        function proximaTela() {
+            //window.location.reload();
+            setTimeout(function () {
+                window.location.href = 'home_gestor.html';
+            }, 100);
+        }
+
+    </script>
+    
+</body>
+</html>
