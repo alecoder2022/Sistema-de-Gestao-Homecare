@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'Uber';
+    src: url('../src/fontes/ubermovemedium.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    animation: rotate-bg-color 10s infinite;
+}
+
+    @keyframes rotate-bg-color {
+    0% {
+        background-color: #EBEBF0;
+    }
+    15% {
+        background-color: #FDA69B;                
+    }
+    30% {
+        background-color: #FDA69B;                
+    }
+    45% {
+        background-color: #FB4E37;
+    }
+    60% {
+        background-color: #FB4E37;
+    }
+    75% {
+        background-color: #CB2B16;
+    }
+    90% {
+        background-color: #CB2B16;
+    }
+    100% {                
+        background-color: #EBEBF0;
+    }
+    
+}
+
+@media (max-width: 767px) {
+
+    img {
+        width: 90%;
+        filter: blur(0.5px);
+        margin-bottom: 30px;
+    }
+
+    .welcome {
+        font-size: 1.4rem;
+        font-family: 'Uber', Arial, Helvetica, sans-serif;
+    
+    }
+
+    .welcome p {
+        max-width: 80%;
+        font-family: 'Uber', Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    img {
+        max-width: 600px;
+        filter: blur(0.5px);
+        margin-bottom: 30px;
+    }
+
+    .welcome {
+        font-size: 1.8rem;
+        font-family: 'Uber', Arial, Helvetica, sans-serif;
+    }
+
+    .welcome p {
+        max-width: 650px;
+        font-family: 'Uber', Arial, Helvetica, sans-serif;
+        font-size: 1.4rem;
+    }
+
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+p {
+    animation: fadeInSlide 1.5s ease-out forwards;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 120%;
+    letter-spacing: 1.2px;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #EBEBF0;
+}
+
+.welcome h2 {
+    animation: fadeInSlide 1.5s ease-out forwards;
+    text-align: center;
+    font-weight: normal;
+
+}
+
+.btn {
+    margin-top: 50px;
+    margin-bottom: -2px;
+    width: 32px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+h5 {
+    font-weight: normal;
+    font-size: 12pt;
+    color: #FA2408;
+
+}
+
+a {
+    text-decoration: none;
+}
